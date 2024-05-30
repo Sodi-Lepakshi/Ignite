@@ -1,0 +1,111 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.color{
+    color:orange;
+}
+
+.card-home {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.card-about {
+    background-color: #e6f7ff;
+    border: 1px solid #b3e0ff;
+}
+
+.card-services {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+}
+
+.card-contact {
+    background-color: #ffffcc;
+    border: 1px solid #e6e600;
+}
+
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.heading {
+    margin: 0;
+    font-size: 24px;
+    color: black;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.nav-link {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-link:hover {
+    color: gray;
+}
+
+.btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    background-image:url('https://png.pngtree.com/thumb_back/fh260/background/20210403/pngtree-simple-white-flat-vectors-with-diagonal-cuts-decorative-backdrops-for-your-image_597612.jpg');
+  background-size: cover;
+
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    margin-left: 70px;
+}
+
+.column {
+    width: 45%;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
