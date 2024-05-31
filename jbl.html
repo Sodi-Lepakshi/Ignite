@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobsPlace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="jbl.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex">
+        <!-- Sidebar -->
+        <div class="sidebar bg-blue-800 text-white h-screen w-64 p-6">
+            <div class="text-2xl font-bold mb-6">JobsPlace</div>
+            <nav>
+                <ul>
+                    <li class="mb-4"><i class="fas fa-home mr-2"></i> Home</li>
+                    <li class="mb-4"><i class="fas fa-search mr-2"></i> Find Jobs</li>
+                    <li class="mb-4"><i class="fas fa-chart-line mr-2"></i> Performance</li>
+                    <li class="mb-4"><i class="fas fa-bookmark mr-2"></i> Bookmarks</li>
+                    <li class="mb-4"><i class="fas fa-comments mr-2"></i> Message</li>
+                    <li class="mb-4"><i class="fas fa-cog mr-2"></i> Setting</li>
+                </ul>
+            </nav>
+            <div class="absolute bottom-6 left-6 flex items-center space-x-2">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg" alt="Albert Einstein" class="rounded-full">
+                <div>
+                    <div class="font-bold">Albert Einstein</div>
+                    <div class="text-sm">Software Engineer</div>
+                </div>
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="flex-1 p-6">
+            <div class="flex items-center mb-6">
+                <input type="text" placeholder="data science" class="search-input flex-1 p-2 border rounded-l-md">
+                <button class="search-button p-2 bg-blue-600 text-white rounded-r-md">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <div class="flex items-center mb-4">
+                <div class="filter-buttons flex space-x-4">
+                    <button class="px-4 py-2 bg-blue-600 text-white rounded-md">Data Science</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md">Data Engineer</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md">Data Analyst</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md">Data Visualization</button>
+                    <button class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md">CRM Analyst</button>
+                </div>
+                <div class="ml-auto flex space-x-4">
+                    <div>
+                        <label for="sort">Sort</label>
+                        <select id="sort" class="border rounded-md p-2">
+                            <option>All</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="recommendations space-y-4">
+                <!-- Job Card 1 -->
+                <div class="job-card bg-white p-4 rounded-md shadow-md flex" onclick="showJobDetails('google')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvizumLszgQpxraqoEOYygs5H9hMS5K9Kc3w&s" alt="Google" class="rounded-full mr-4">
+                    <div class="flex-1">
+                        <div class="font-bold">Google</div>
+                        <div>Data Science, Data Engineer</div>
+                        <div class="text-gray-600">Abod street</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-blue-600"><a href="#">Data Engineer</a></div>
+                        <div class="font-bold text-lg">$350k/year</div>
+                    </div>
+                </div>
+                <!-- Job Card 2 -->
+                <div class="job-card bg-white p-4 rounded-md shadow-md flex" onclick="showJobDetails('tiktok')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUONC4xHo3kpyxIOnl2nxRMNckgILFJfnVuQ&s" alt="Tiktok" class="rounded-full mr-4">
+                    <div class="flex-1">
+                        <div class="font-bold">Tiktok</div>
+                        <div>Data Analyst, Product Analyst</div>
+                        <div class="text-gray-600">Abod street</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-blue-600"><a href="#">Data Science</a></div>
+                        <div class="font-bold text-lg">$200k/year</div>
+                    </div>
+                </div>
+                <!-- Job Card 3 -->
+                <div class="job-card bg-white p-4 rounded-md shadow-md flex" onclick="showJobDetails('youtube')">
+                    <img src="https://thumbs.dreamstime.com/b/youtube-new-155631998.jpg" alt="Youtube" class="rounded-full mr-4">
+                    <div class="flex-1">
+                        <div class="font-bold">Youtube</div>
+                        <div>Senior Software Engineer</div>
+                        <div class="text-gray-600">Abod street</div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-blue-600"><a href="#">Product</a></div>
+                        <div class="font-bold text-lg">$485k/year</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Job Details -->
+        <div class="job-details w-96 p-6 bg-white shadow-md">
+            <div class="flex items-center mb-6">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvizumLszgQpxraqoEOYygs5H9hMS5K9Kc3w&s" alt="Google" class="rounded-full mr-4">
+                <div>
+                    <div class="text-2xl font-bold" id="company-name">Google</div>
+                    <div class="text-gray-600" id="job-title">Data Science</div>
+                </div>
+            </div>
+            <div>
+                <h2 class="font-bold text-lg mb-2">About Company</h2>
+                <p class="text-gray-600 mb-4" id="about-company">Google is an American search engine company, founded in 1998 by Sergey Brin and Larry Page. Since 2015, Google has been a subsidiary of the holding company Alphabet.</p>
+                <h2 class="font-bold text-lg mb-2">Qualification</h2>
+                <ul class="text-gray-600 space-y-2" id="qualifications">
+                    <li>A bachelor's degree or equivalent practical experience is required.</li>
+                    <li>Three years of experience in software development, or 1 year with an advanced degree. </li>
+                    <li>Understanding Algorithms, Data Structures, Object-Oriented Programming, and Databases.</li>
+                    <li>proficiency in coding languages.</li>
+                </ul>
+            </div>
+            <div class="mt-6 flex space-x-4">
+                <button class="px-4 py-2 bg-blue-600 text-white rounded-md">Apply Now</button>
+                <button class="px-4 py-2 bg-yellow-400 text-white rounded-md">Save Job</button>
+            </div>
+        </div>
+    </div>
+    <script src="jbl.js"></script>
+</body>
+</html>
